@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+    <style>
+        html{
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            text-align: center;
+        }
+        .title{
+            font-size: 10vw;
+        }
+    </style>
+    <script src="https://ocrebb776.github.io/cookies-internal-/index.js"></script>
+<body>
+    <script>
+
+</script>
+<div class="title">Note Keeper</div>
+
+
+
+<form onsubmit="sub()" name="signup" style="text-align: center;">
+<textarea style="width:50%" id="para" rows="10" cols="50">
+[enter text]
+    </textarea><br>
+    <input style="width:50%"type="submit" value="Save">
+</form>
+<br> all notes last 100 days since last edit
+<script>
+
+let names
+let para
+let password
+function sub(){
+    para= document.forms['signup']['para'].value
+    setCookie('paran',para,100)
+
+}
+
+let notes = getCookie('paran')
+document.getElementById('para').innerHTML = notes
+
+</script>
+</body>
+</html>
+

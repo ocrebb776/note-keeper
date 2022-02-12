@@ -12,6 +12,9 @@ html {
   height: 6vh;
   background-color: #ffffff;
 }
+ol {
+  margin-left: 1vw;
+}
 input[type='submit'] {
   width: 100%;
   background-color: #4caf50;

@@ -18,12 +18,14 @@
 
 
 <form onsubmit="sub()" name="items" style="text-align: center;">
-    <label for="apples">Apples: </label>
-<input type="checkbox" id="apples"class="regular-checkbox big-checkbox"><br>
-<label for="oranges">Oranges: </label>
-<input type="checkbox" id="oranges"class="regular-checkbox big-checkbox"> <br>
-<label for="bananas">Bananas: </label>
-<input type="checkbox" id="bananas"class="regular-checkbox big-checkbox">  
+    <label for="b1">bowl1: </label>
+<input type="checkbox" id="b1"class="regular-checkbox big-checkbox"><br>
+<label for="b2">bowl2: </label>
+<input type="checkbox" id="b2"class="regular-checkbox big-checkbox"> <br>
+<label for="b3">bowl3: </label>
+<input type="checkbox" id="b3"class="regular-checkbox big-checkbox">  <br>
+<label for="cake">cake: </label>
+<input type="checkbox" id="cake"class="regular-checkbox big-checkbox"> <br>
 <br>
     <input style="width:30%"type="submit" value="Save">
 </form>
@@ -34,27 +36,60 @@
 <script>
 let notes
 let toset
+let apples = 0
+let bannas =0
+let flour = 0
+let egg = 0
+let butter = 0
+let sugar = 0
+let bakingp = 0
+let milk = 0
+if(getCookie("b1")=="true"){
+        apples+=1
+        bannas+=1
+    }
+    if(getCookie("b2")=="true"){
+        bannas+=1
+    }
+    if(getCookie("b3")=="true"){
+        apples+=1
+    }
+    if(getCookie("cake")=="true"){
+        flour +=100
+        egg +=4
+        butter+=200
+        sugar+=200
+        milk+1
+        bakingp+=10
+    }
+
+check('banana',bannas)
+check('apple',apples)
+check('flour',flour)
+check('egg',egg)
+check('butter',butter)
+check('sugar',sugar)
+check('baking powder',bakingp)
+check('milk',milk)
 function sub(){
-    toset=document.forms['items']['apples'].checked
-    setCookie('apples',toset,100)
-    toset=document.forms['items']['oranges'].checked
-    setCookie('oranges',toset,100)
-    toset=document.forms['items']['bananas'].checked
-    setCookie('bananas',toset,100)
+    toset=document.forms['items']['b1'].checked
+    setCookie('b1',toset,100)
+    toset=document.forms['items']['b2'].checked
+    setCookie('b2',toset,100)
+    toset=document.forms['items']['b3'].checked
+    setCookie('b3',toset,100)
+    toset=document.forms['items']['cake'].checked
+    setCookie('cake',toset,100)
 
 }
-function check(names){
-if(getCookie(names)=="true"){
-        $("ol").append("<li>"+names+"</li>");
+function check(names,amount){
+    if(amount>0){
+    $("ol").append("<li>"+names+' x'+amount+"</li>");
     }
 }
+/*        $("ol").append("<li>"+names+"</li>");*/
 </script>
-<script>
-    check('apples')
-    check('oranges')
-    check('bananas')
 
-</script>
 </body>
 </html>
 

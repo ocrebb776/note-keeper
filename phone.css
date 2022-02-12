@@ -57,10 +57,10 @@ input[type='submit'] {
   position: relative;
 }
 .big-checkbox {
-  padding: 2vw;
+  padding: 4vw;
 }
 
 .big-checkbox:checked:after {
-  font-size: 3.5vw;
-  left: 0.4vw;
+  font-size: 6.5vw;
+  left: 0.7vw;
 }

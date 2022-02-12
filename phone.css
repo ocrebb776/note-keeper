@@ -6,6 +6,11 @@ html {
 .title {
   font-size: 4vh;
   border-bottom: 1vh solid black;
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 6vh;
+  background-color: #ffffff;
 }
 input[type='submit'] {
   width: 100%;
